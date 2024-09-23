@@ -40,15 +40,20 @@ const affSearch = defineEventHandler(async (event) => {
   let limit = 100;
   let currentOffset = 0;
   let pageLimit = 50;
-  while (currentOffset < limit) {
-    console.log(`Fetch ${currentOffset}`);
-    const res = await fetch(`https://affiliate.shopee.co.id/api/v3/offer/product/list?list_type=0&keyword=${kw}&sort_type=2&page_offset=${currentOffset}&page_limit=${pageLimit}&client_type=1&filter_types=2`, requestOptions).then(async (response) => response.json());
-    limit = res.data.total_count;
-    currentOffset = currentOffset + 50;
-    for (let index = 0; index < res.data.list.length; index++) {
-      const element = res.data.list[index];
-      ember.push(element);
+  try {
+    while (currentOffset < limit) {
+      console.log(`Fetch ${currentOffset}`);
+      const res = await fetch(`https://affiliate.shopee.co.id/api/v3/offer/product/list?list_type=0&keyword=${kw}&sort_type=2&page_offset=${currentOffset}&page_limit=${pageLimit}&client_type=1&filter_types=2`, requestOptions).then(async (response) => response.json());
+      limit = res.data.total_count;
+      currentOffset = currentOffset + 50;
+      for (let index = 0; index < res.data.list.length; index++) {
+        const element = res.data.list[index];
+        ember.push(element);
+      }
     }
+    return ember;
+  } catch (error) {
+    return error;
   }
   return ember;
 });

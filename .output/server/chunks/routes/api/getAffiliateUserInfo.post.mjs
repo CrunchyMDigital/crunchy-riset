@@ -1,5 +1,4 @@
-import { d as defineEventHandler, r as readBody } from '../../_/index.mjs';
-import '../../runtime.mjs';
+import { d as defineEventHandler, r as readBody } from '../../runtime.mjs';
 import 'node:http';
 import 'node:https';
 import 'fs';

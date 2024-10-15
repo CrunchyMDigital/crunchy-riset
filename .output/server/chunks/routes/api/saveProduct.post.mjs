@@ -1,6 +1,5 @@
-import { d as defineEventHandler, r as readBody } from '../../_/index.mjs';
+import { d as defineEventHandler, r as readBody, u as useRuntimeConfig } from '../../runtime.mjs';
 import PocketBase from 'pocketbase';
-import { u as useRuntimeConfig } from '../../runtime.mjs';
 import 'node:http';
 import 'node:https';
 import 'fs';

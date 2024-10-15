@@ -1,6 +1,5 @@
-import { d as defineEventHandler, g as getQuery } from '../../_/index.mjs';
+import { d as defineEventHandler, g as getQuery } from '../../runtime.mjs';
 import axios from 'axios';
-import '../../runtime.mjs';
 import 'node:http';
 import 'node:https';
 import 'fs';

@@ -1,6 +1,5 @@
-import { d as defineEventHandler, r as readBody } from '../../../_/index.mjs';
+import { d as defineEventHandler, r as readBody } from '../../../runtime.mjs';
 import axios from 'axios';
-import '../../../runtime.mjs';
 import 'node:http';
 import 'node:https';
 import 'fs';

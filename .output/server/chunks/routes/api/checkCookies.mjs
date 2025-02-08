@@ -1,4 +1,4 @@
-import { d as defineEventHandler, r as readBody } from '../../../runtime.mjs';
+import { d as defineEventHandler, r as readBody } from '../../runtime.mjs';
 import axios from 'axios';
 import 'node:http';
 import 'node:https';
@@ -10,12 +10,11 @@ import '@primeuix/styled';
 import 'node:fs';
 import 'node:url';
 
-const _itemId_ = defineEventHandler(async (event) => {
-  const itemId = parseInt(event.context.params.itemId);
+const checkCookies = defineEventHandler(async (event) => {
   const body = await readBody(event);
   const cookies = body.cookies;
   try {
-    const res = await axios.get(`https://affiliate.shopee.co.id/api/v3/offer/product?item_id=${itemId}`, {
+    const res = await axios.get(`https://affiliate.shopee.co.id/api/v3/offer/product?item_id=22835247100`, {
       // params: {
       //   'list_type': '0',
       //   'keyword': kw,
@@ -47,5 +46,5 @@ const _itemId_ = defineEventHandler(async (event) => {
   }
 });
 
-export { _itemId_ as default };
-//# sourceMappingURL=_itemId_.mjs.map
+export { checkCookies as default };
+//# sourceMappingURL=checkCookies.mjs.map
